@@ -1,5 +1,5 @@
 import {HttpClient} from '@angular/common/http';
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,8 @@ export class AppComponent {
   usdRate!: number;
   eurRate!: number;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit() {
     this.getExchangeRates();
