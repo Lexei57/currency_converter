@@ -9,7 +9,7 @@ import {ConverterService} from '../../services/converter.service';
 })
 export class ConverterComponent {
 
-  currencies: string[] = ['USD', 'EUR', 'UAH'];
+  currencies: string[] = ['USD', 'EUR', 'UAH', 'GBP', 'JPY', 'CHF', 'MDL'];
   currency1: string = 'USD';
   currency2: string = 'UAH';
   value1: number = 0;
