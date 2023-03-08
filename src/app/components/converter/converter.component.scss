@@ -1,0 +1,70 @@
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+}
+
+label {
+  font-size: 24px;
+  padding: 0 0 0 30px;
+}
+
+input {
+  padding: 0 0 5px 0;
+  margin: 0 0 0 10px;
+  border: 0;
+  border-bottom: 1px solid black;
+  font-size: 24px;
+  max-width: 170px;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select {
+  padding: 0 0 0 10px;
+  margin: 0 30px 0 0;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  & option {
+    border: none;
+  }
+
+}
+
+.currency-window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  margin:  50px auto;
+  padding: 50px 0 50px 0;
+  background-color: rgb(255, 216, 115, 0.4);
+  border-radius: 30px;
+}
+
+.mat-select {
+  max-width: 80px;
+  max-height: 67px;
+  margin-right: 10px;
+}
+
+
+
+
+
+
