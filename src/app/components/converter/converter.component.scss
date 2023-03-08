@@ -1,4 +1,3 @@
-
 button {
   background-color: transparent;
   border: none;
@@ -46,14 +45,23 @@ select {
 
 }
 
+.converter {
+  background-color: rgb(161, 214, 226, 0.5);
+  margin: auto;
+  width: 70%;
+  padding-top: 100px;
+  padding-bottom: 150px;
+  border-radius: 0 0 30px 30px;
+}
+
 .currency-window {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 55%;
+  max-width: 70%;
   margin: auto;
   padding: 50px 0 50px 0;
-  background-color: #ffd873;
+  background-color: #f1f1f2;
   border-radius: 30px;
 }
 
@@ -63,12 +71,40 @@ select {
   margin-right: 10px;
 }
 
+@media (max-width: 768px) {
+  button {
+    margin-top: 30px;
+  }
+  .converter {
+    width: 100%;
+  }
 
-.converter {
-  background-color: rgb(144, 188, 233, 0.5);
-  margin: auto;
-  width: 70%;
-  padding-top: 100px;
-  padding-bottom: 150px;
-  border-radius: 0 0 30px 30px;
+  .input-item {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+
+    & label {
+      align-self: center;
+      margin-left: -20px;
+    }
+
+    & select {
+      margin: auto;
+    }
+  }
 }
+
+@media (max-width: 1400px) {
+  .currency-window {
+    flex-direction: column;
+    max-width: 70%;
+  }
+
+  .input-item {
+    padding: 30px 0 50px 0;
+  }
+}
+
+
+
