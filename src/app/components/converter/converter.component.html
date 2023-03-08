@@ -1,23 +1,24 @@
-
-<div class="currency-window">
-  <div>
-    <label for="from-input">{{ currency1 }}</label>
-      <input id="from-input" type="number" min="0" [(ngModel)]="value1" (input)="onValue1Change()">
-      <select [(ngModel)]="currency1" (change)="onChangeCurrency()">
-       <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+<article class="converter">
+  <div class="currency-window">
+    <div>
+      <label for="from-input">{{ currency1 }}</label>
+        <input id="from-input" type="number" min="0" [(ngModel)]="value1" (input)="onValue1Change()">
+        <select [(ngModel)]="currency1" (change)="onChangeCurrency()">
+         <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+        </select>
+    </div>
+        <button>
+          <img src="./assets/icons/exchange.svg"  alt="exchange-icon" (click)="swapCurrencies()">
+        </button>
+    <div>
+      <label for="to-input">{{ currency2 }}</label>
+      <input id="to-input" type="number" min="0" [(ngModel)]="value2" (input)="onValue2Change()">
+      <select [(ngModel)]="currency2" (change)="onChangeCurrency()">
+        <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
       </select>
+    </div>
   </div>
-      <button>
-        <img src="./assets/icons/exchange.svg"  alt="exchange-icon" (click)="swapCurrencies()">
-      </button>
-  <div>
-    <label for="to-input">{{ currency2 }}</label>
-    <input id="to-input" type="number" min="0" [(ngModel)]="value2" (input)="onValue2Change()">
-    <select [(ngModel)]="currency2" (change)="onChangeCurrency()">
-      <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
-    </select>
-  </div>
-</div>
+</article>
 
 <!--<input type="number" min="0" [(ngModel)]="value2" (input)="onValue2Change()">-->
 <!--<mat-form-field class="mat-select" appearance="fill">-->
