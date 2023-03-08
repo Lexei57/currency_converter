@@ -12,8 +12,8 @@ export class ConverterComponent {
   currencies: string[] = ['USD', 'EUR', 'UAH', 'GBP', 'JPY', 'CHF', 'MDL'];
   currency1: string = 'USD';
   currency2: string = 'UAH';
-  value1: number = 0;
-  value2: number = 0;
+  value1: number;
+  value2: number;
 
 
   constructor(private converterService: ConverterService) {
