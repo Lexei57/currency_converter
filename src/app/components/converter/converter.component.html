@@ -3,9 +3,9 @@
   <div>
     <label for="from-input">{{ currency1 }}</label>
       <input id="from-input" type="number" min="0" [(ngModel)]="value1" (input)="onValue1Change()">
-    <select [(ngModel)]="currency1" (change)="onChangeCurrency()">
-      <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
-    </select>
+      <select [(ngModel)]="currency1" (change)="onChangeCurrency()">
+       <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+      </select>
   </div>
       <button>
         <img src="./assets/icons/exchange.svg"  alt="exchange-icon" (click)="swapCurrencies()">
@@ -19,11 +19,10 @@
   </div>
 </div>
 
-<input type="number" min="0" [(ngModel)]="value1" (input)="onValue1Change()">
-<mat-form-field class="back" appearance="fill">
-  <mat-label>{{currency1}}</mat-label>
-  <mat-select [(ngModel)]="currency1" (change)="onChangeCurrency()" [formControl]="selected" [errorStateMatcher]="matcher">
-    <mat-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</mat-option>
-  </mat-select>
-</mat-form-field>
+<!--<input type="number" min="0" [(ngModel)]="value2" (input)="onValue2Change()">-->
+<!--<mat-form-field class="mat-select" appearance="fill">-->
+<!--  <mat-select [(ngModel)]="currency2" (change)="onChangeCurrency()">-->
+<!--    <mat-option  *ngFor="let currency of currencies" [value]="currency">{{ currency }}</mat-option>-->
+<!--  </mat-select>-->
+<!--</mat-form-field>-->
 

@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm} from '@angular/forms';
 import {ConverterService} from '../../services/converter.service';
-import {ErrorStateMatcher} from '@angular/material/core';
 
 
 
@@ -19,8 +17,6 @@ export class ConverterComponent {
   value1: number = 0;
   value2: number = 0;
 
-  selected = new FormControl('valid', );
-  matcher = new MyErrorStateMatcher();
 
 
   constructor(private converterService: ConverterService) {
@@ -38,6 +34,7 @@ export class ConverterComponent {
     this.value2 = +this.converterService.convert(this.currency1, this.currency2, this.value1).toFixed(2);
   }
 
+
   swapCurrencies() {
     const temp = this.currency1;
     this.currency1 = this.currency2;
@@ -46,10 +43,5 @@ export class ConverterComponent {
   }
 }
 
-class MyErrorStateMatcher implements ErrorStateMatcher{
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
+
 
