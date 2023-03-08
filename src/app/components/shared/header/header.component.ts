@@ -1,5 +1,6 @@
-import {HttpClient} from '@angular/common/http';
 import {Component, OnInit} from '@angular/core';
+import {ExchangeRates} from '../../../models/converter.model';
+import {ConverterService} from '../../../services/converter.service';
 
 @Component({
   selector: 'app-header',
@@ -10,20 +11,13 @@ export class HeaderComponent implements OnInit {
   usdRate!: number;
   eurRate!: number;
 
-  constructor(private http: HttpClient) {
+  constructor(private converterService: ConverterService) {
   }
 
-  ngOnInit() {
-    this.getExchangeRates();
-  }
-
-  getExchangeRates() {
-    const apiUrl = 'https://openexchangerates.org/api/latest.json?app_id=18392e1059f8498594bec31628fd3e31&symbols=USD,EUR,UAH';
-
-    this.http.get(apiUrl).subscribe((data: any) => {
-      this.usdRate = data.rates.USD * data.rates.UAH;
-      this.eurRate = (data.rates.USD * data.rates.UAH) / (data.rates.EUR * data.rates.USD);
+  ngOnInit(): void {
+    this.converterService.exchangeRates$.subscribe(({USD, UAH, EUR}: ExchangeRates) => {
+      this.usdRate = USD * UAH;
+      this.eurRate = (USD * UAH) / (EUR * USD);
     });
   }
-
 }
