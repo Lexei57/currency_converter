@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
   usdRate!: number;
   eurRate!: number;
 
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit{
 
     this.http.get(apiUrl).subscribe((data: any) => {
       this.usdRate = data.rates.USD * data.rates.UAH;
-      this.eurRate = (data.rates.USD * data.rates.UAH) / (data.rates.EUR * data.rates.USD)
+      this.eurRate = (data.rates.USD * data.rates.UAH) / (data.rates.EUR * data.rates.USD);
     });
   }
 
