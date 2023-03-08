@@ -4,9 +4,10 @@ header {
   width: 70%;
   margin: auto;
   align-items: center;
-  background-color: #6B9BCE;
-  border-bottom: 2px solid black;
+  background-color: rgb(25, 149, 173, 0.8);
+  border-bottom: 1px solid black;
   padding: 20px 0 20px 0;
+  color: #f1f1f2;
 }
 
 span {
@@ -16,4 +17,10 @@ span {
 .currency-container {
   display: flex;
   gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    width: 100%;
+  }
 }

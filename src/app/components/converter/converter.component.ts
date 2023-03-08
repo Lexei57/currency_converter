@@ -2,21 +2,18 @@ import {Component} from '@angular/core';
 import {ConverterService} from '../../services/converter.service';
 
 
-
-
 @Component({
   selector: 'app-converter',
   templateUrl: './converter.component.html',
-  styleUrls: ['./converter.component.scss'],
+  styleUrls: ['./converter.component.scss']
 })
 export class ConverterComponent {
 
-  currencies: string[] = ['USD', 'EUR', 'UAH'];
+  currencies: string[] = ['USD', 'EUR', 'UAH', 'GBP', 'JPY', 'CHF', 'MDL'];
   currency1: string = 'USD';
   currency2: string = 'UAH';
   value1: number = 0;
   value2: number = 0;
-
 
 
   constructor(private converterService: ConverterService) {
@@ -33,7 +30,6 @@ export class ConverterComponent {
   onChangeCurrency() {
     this.value2 = +this.converterService.convert(this.currency1, this.currency2, this.value1).toFixed(2);
   }
-
 
   swapCurrencies() {
     const temp = this.currency1;

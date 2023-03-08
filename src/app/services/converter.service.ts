@@ -2,7 +2,6 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +13,7 @@ export class ConverterService {
 
   constructor(private http: HttpClient) {
     const url = `${this.apiUrl}?app_id=${this.appId}`;
-    this.http.get(url).subscribe((data: { [key: string]: any  }) => {
+    this.http.get(url).subscribe((data: { [key: string]: any }) => {
       this.exchangeRates = data['rates'];
     });
   }
