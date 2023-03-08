@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { Currency } from 'src/app/models/converter.model';
 import {ConverterService} from '../../services/converter.service';
 
 
@@ -9,9 +10,9 @@ import {ConverterService} from '../../services/converter.service';
 })
 export class ConverterComponent {
 
-  currencies: string[] = ['USD', 'EUR', 'UAH', 'GBP', 'JPY', 'CHF', 'MDL'];
-  currency1: string = 'USD';
-  currency2: string = 'UAH';
+  currencies: string[] = Object.values(Currency);
+  fromCurrency: Currency = Currency.USD;
+  toCurrency: Currency = Currency.UAH;
   value1: number;
   value2: number;
 
@@ -19,23 +20,23 @@ export class ConverterComponent {
   constructor(private converterService: ConverterService) {
   }
 
-  onValue1Change() {
-    this.value2 = +this.converterService.convert(this.currency1, this.currency2, this.value1).toFixed(2);
+  onFromValueChange(): void {
+    this.value2 = this.converterService.convert(this.fromCurrency, this.toCurrency, this.value1);
   }
 
-  onValue2Change() {
-    this.value1 = +this.converterService.convert(this.currency2, this.currency1, this.value2).toFixed(2);
+  onToValueChange(): void {
+    this.value1 = this.converterService.convert(this.toCurrency, this.fromCurrency, this.value2);
   }
 
-  onChangeCurrency() {
-    this.value2 = +this.converterService.convert(this.currency1, this.currency2, this.value1).toFixed(2);
+  onChangeCurrency(): void {
+    this.value2 = this.converterService.convert(this.fromCurrency, this.toCurrency, this.value1);
   }
 
-  swapCurrencies() {
-    const temp = this.currency1;
-    this.currency1 = this.currency2;
-    this.currency2 = temp;
-    this.value2 = +this.converterService.convert(this.currency1, this.currency2, this.value1).toFixed(2);
+  swapCurrencies(): void {
+    const temp = this.fromCurrency;
+    this.fromCurrency = this.toCurrency;
+    this.toCurrency = temp;
+    this.value2 = this.converterService.convert(this.fromCurrency, this.toCurrency, this.value1);
   }
 }
 
