@@ -13,8 +13,8 @@ export class ConverterComponent {
   currencies: string[] = Object.values(Currency);
   fromCurrency: Currency = Currency.USD;
   toCurrency: Currency = Currency.UAH;
-  value1: number = 0;
-  value2: number = 0;
+  value1: number;
+  value2: number;
 
 
   constructor(private converterService: ConverterService) {

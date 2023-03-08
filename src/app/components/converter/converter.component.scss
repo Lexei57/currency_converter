@@ -79,10 +79,17 @@ select {
     width: 100%;
   }
 
+  .select-item {
+    position: relative;
+    top: 10px;
+    font-size: 18px;
+  }
+
   .input-item {
     margin-top: 45px;
     display: flex;
     flex-direction: column;
+
 
     & label {
       align-self: center;
@@ -95,7 +102,11 @@ select {
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
+  .converter {
+    width: 100%;
+  }
+
   .currency-window {
     flex-direction: column;
     max-width: 70%;

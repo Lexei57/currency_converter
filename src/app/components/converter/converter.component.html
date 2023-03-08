@@ -2,8 +2,8 @@
   <div class="currency-window">
     <div class="input-item">
       <label for="from-input">{{ fromCurrency }}</label>
-        <input id="from-input" type="number" min="0" [(ngModel)]="value1" (input)="onFromValueChange()">
-        <select [(ngModel)]="fromCurrency" (change)="onChangeCurrency()">
+        <input id="from-input" type="number" min="0" placeholder="0" [(ngModel)]="value1" (input)="onFromValueChange()">
+        <select class="select-item" [(ngModel)]="fromCurrency" (change)="onChangeCurrency()">
          <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
         </select>
     </div>
@@ -12,8 +12,8 @@
         </button>
     <div class="input-item">
       <label for="to-input">{{ toCurrency }}</label>
-      <input id="to-input" type="number" min="0" [(ngModel)]="value2" (input)="onToValueChange()">
-      <select [(ngModel)]="toCurrency" (change)="onChangeCurrency()">
+      <input id="to-input" type="number" min="0" placeholder="0" [(ngModel)]="value2" (input)="onToValueChange()">
+      <select class="select-item" [(ngModel)]="toCurrency" (change)="onChangeCurrency()">
         <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
       </select>
     </div>
