@@ -50,10 +50,10 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 50%;
-  margin:  50px auto;
+  max-width: 55%;
+  margin: auto;
   padding: 50px 0 50px 0;
-  background-color: rgb(255, 216, 115, 0.4);
+  background-color: #ffd873;
   border-radius: 30px;
 }
 
@@ -64,7 +64,11 @@ select {
 }
 
 
-
-
-
-
+.converter {
+  background-color: rgb(144, 188, 233, 0.5);
+  margin: auto;
+  width: 70%;
+  padding-top: 100px;
+  padding-bottom: 150px;
+  border-radius: 0 0 30px 30px;
+}
