@@ -4,7 +4,7 @@
       <label for="from-input">{{ fromCurrency }}</label>
         <input id="from-input" type="number" min="0" placeholder="0" [(ngModel)]="value1" (input)="onFromValueChange()">
         <select class="select-item" [(ngModel)]="fromCurrency" (change)="onChangeCurrency()">
-         <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+					<option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
         </select>
     </div>
         <button>
