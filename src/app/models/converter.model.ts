@@ -1,8 +1,11 @@
 export interface IExchangeRatesResponse {
     base: Currency;
-    rates: string;
+    rates: ExchangeRates;
   }
 
+  export type ExchangeRates = {
+    [key in Currency]: number
+  }
 
 
 export enum Currency {
@@ -10,4 +13,7 @@ export enum Currency {
     USD = 'USD',
     EUR = 'EUR',
     MDL = 'MDL',
+    GBP = 'GBP',
+    JPY = 'JPY',
+    CHF = 'CHF'
 }

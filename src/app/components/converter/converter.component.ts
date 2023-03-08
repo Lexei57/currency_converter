@@ -20,11 +20,11 @@ export class ConverterComponent {
   constructor(private converterService: ConverterService) {
   }
 
-  onValue1Change(): void {
+  onFromValueChange(): void {
     this.value2 = this.converterService.convert(this.fromCurrency, this.toCurrency, this.value1);
   }
 
-  onValue2Change(): void {
+  onToValueChange(): void {
     this.value1 = this.converterService.convert(this.toCurrency, this.fromCurrency, this.value2);
   }
 
